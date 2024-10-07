@@ -23,22 +23,12 @@
         </form>
 
         <?php
+        require_once __DIR__ . '/functions.php';
+
         if (isset($_GET['length']) && is_numeric($_GET['length'])) {
             $length = $_GET['length'];
             
             if ($length >= 6 && $length <= 15) {
-
-                function generatePassword($length) {
-                    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*_+-=<>?';
-                    $password = '';
-                    $charactersLength = strlen($characters);
-                
-                    for ($i = 0; $i < $length; $i++) {
-                        $password .= $characters[random_int(0, $charactersLength - 1)];
-                    }
-                
-                    return $password;
-                }
 
                 $generatedPassword = generatePassword($length);
                 ?>
