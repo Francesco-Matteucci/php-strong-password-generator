@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generatore di Password</title>
+    <title>Generatore di Password - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -23,30 +23,24 @@
         </form>
 
         <?php
-        require_once __DIR__ . '/functions.php';
+session_start();
+require_once __DIR__ . '/functions.php';
 
-        if (isset($_GET['length']) && is_numeric($_GET['length'])) {
-            $length = $_GET['length'];
-            
-            if ($length >= 6 && $length <= 15) {
-
-                $generatedPassword = generatePassword($length);
-                ?>
-
-        <div class="alert alert-success mt-3">
-            <p class="m-0">Password generata: <strong><?php echo $generatedPassword; ?></strong></p>
-        </div>
-
-        <?php
-            } else {
-                ?>
+if (isset($_GET['length']) && is_numeric($_GET['length'])) {
+    $length = $_GET['length'];
+    
+    if ($length >= 6 && $length <= 15) {
+        $_SESSION['generated_password'] = generatePassword($length);
+        header('Location: result.php');
+    } else {
+        ?>
         <div class="alert alert-danger mt-3">
             <p class="m-0">La lunghezza della password deve essere compresa tra 6 e 15 caratteri.</p>
         </div>
         <?php
-            }
-        }
-        ?>
+    }
+}
+?>
     </div>
 </body>
 
