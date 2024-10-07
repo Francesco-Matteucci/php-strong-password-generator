@@ -19,12 +19,12 @@ $password = $_SESSION['generated_password'];
         <h1 class="text-center">Password Generata</h1>
         <p class="text-center">La password generata è:</p>
 
-        <div class="alert alert-success mt-3">
+        <div class="alert alert-success mt-3 shadow">
             <p class="m-0">Password: <strong><?php echo $password; ?></strong></p>
         </div>
 
         <div class="text-center mt-3">
-            <a href="index.php" class="btn btn-primary">Genera una nuova password</a>
+            <a href="index.php" class="btn btn-primary btn-lg mt-3">Genera una nuova password</a>
         </div>
     </div>
 </body>

@@ -13,7 +13,7 @@
         <h1 class="text-center">Strong Password Generator</h1>
         <p class="text-center">Genera una password random</p>
 
-        <form method="GET" action="" class="bg-light p-4 rounded text-dark">
+        <form method="GET" action="" class="bg-secondary p-4 rounded text-light shadow-lg">
             <div class="mb-3">
                 <label for="password-length" class="form-label">Quanti caratteri vuoi avere nella password?
                     (scrivi un valore tra 6 e 15):</label>
@@ -33,7 +33,7 @@
                 <input type="radio" name="allow_repetition" value="0"> No
             </div>
 
-            <button type="submit" class="btn btn-primary">Genera Password</button>
+            <button type="submit" class="btn btn-primary btn-lg">Genera Password</button>
         </form>
 
         <?php
